@@ -1,4 +1,488 @@
-<div class="flex-1 border border-gray-700 bg-gray-800 bg-opacity-50 rounded-lg p-6 shadow-lg">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeSocX Ecosystem Development Roadmap</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #f3f4f6;
+        }
+        .phase-card {
+            transition: all 0.3s ease;
+        }
+        .phase-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: #3b82f6;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .status-introduced {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+        .status-active {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+        .status-unavailable {
+            background-color: rgba(107, 114, 128, 0.2);
+            color: #9ca3af;
+        }
+        .status-enhanced {
+            background-color: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <header class="pt-16 pb-12 px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-indigo-600 text-transparent bg-clip-text">
+                DeSocX Ecosystem Development
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                A revolutionary decentralized platform leveraging quantum-resistant technology, tokenized assets, and autonomous systems for global financial infrastructure
+            </p>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-4 pb-20">
+            <!-- Roadmap Section -->
+            <section class="mb-16">
+                <div class="flex items-center mb-12">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent to-indigo-500"></div>
+                    <h2 class="text-2xl md:text-3xl font-bold px-6 text-center bg-gradient-to-r from-blue-400 to-indigo-600 text-transparent bg-clip-text">Development Roadmap</h2>
+                    <div class="h-px flex-1 bg-gradient-to-r from-indigo-500 to-transparent"></div>
+                </div>
+
+                <div class="relative">
+                    <!-- Vertical Timeline Line -->
+                    <div class="absolute left-6 top-8 bottom-0 w-1 bg-gradient-to-b from-indigo-600 to-blue-600 hidden md:block"></div>
+
+                    <!-- Phase 1 -->
+                    <div class="phase-card mb-8 phase-1">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-40 flex items-start mb-4 md:mb-0">
+                                <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold mr-4 relative z-10">
+                                    1
+                                </div>
+                                <span class="text-lg font-bold text-blue-400 md:hidden">Phase 1</span>
+                            </div>
+                            <div class="flex-1 border border-gray-700 bg-gray-800 bg-opacity-50 rounded-lg p-6 shadow-lg">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-bold mb-1">Pre-Launch: Treasure Hunt</h3>
+                                        <p class="text-gray-400 mb-3">Initial user acquisition and ecosystem onboarding</p>
+                                    </div>
+                                    <button class="toggle-btn" data-phase="1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <div class="phase-content phase-1-content hidden mt-6">
+                                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">Key Token Components</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">Feynman Diagram Certificates:</span> 
+                                                        <p class="text-sm text-gray-400">Entry NFTs that can be minted and later converted to Particle-Energy</p>
+                                                    </div>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">Particle-Energy Tokens:</span> 
+                                                        <p class="text-sm text-gray-400">Created from "collapsed" FDC NFTs with unique properties</p>
+                                                    </div>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">Anyon-Shell:</span> 
+                                                        <p class="text-sm text-gray-400">Biometric identity token created through entanglement</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-indigo-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">User Activity Flow</h4>
+                                            <div class="space-y-3">
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">User participates in cryptic treasure hunt</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Receives airdrop with access credentials</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Mints Feynman Diagram Certificate NFT</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Creates Anyon-Shell via EyeDKey biometric system</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Entangles Particle-Energy with Anyon-Shell</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-purple-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">Features Unlocked</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Initial platform access</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Basic dashboard features</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Countdown to Day of Emergence</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Preparation for $ANYN token launch</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="phase-card mb-8 phase-2">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-40 flex items-start mb-4 md:mb-0">
+                                <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-xl font-bold mr-4 relative z-10">
+                                    2
+                                </div>
+                                <span class="text-lg font-bold text-blue-400 md:hidden">Phase 2</span>
+                            </div>
+                            <div class="flex-1 border border-gray-700 bg-gray-800 bg-opacity-50 rounded-lg p-6 shadow-lg">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-bold mb-1">Day of Emergence: Token Launch</h3>
+                                        <p class="text-gray-400 mb-3">Main platform token launch and initial liquidity bootstrapping</p>
+                                    </div>
+                                    <button class="toggle-btn" data-phase="2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <div class="phase-content phase-2-content hidden mt-6">
+                                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">Key Token Components</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">$ANYN:</span> 
+                                                        <p class="text-sm text-gray-400">The reserve currency token officially launches</p>
+                                                    </div>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">$sANYN:</span> 
+                                                        <p class="text-sm text-gray-400">Staked ANYN token becomes available</p>
+                                                    </div>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">Quintessence Boosts:</span> 
+                                                        <p class="text-sm text-gray-400">Pre-launch participants receive enhanced rewards</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-indigo-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">User Activity Flow</h4>
+                                            <div class="space-y-3">
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Purchase $ANYN tokens during 7-day auction</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Stake $ANYN to receive $sANYN</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Benefit from boosted yields based on pre-launch participation</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Participate in the Red Queen Race</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-purple-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">Features Unlocked</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Full platform functionality</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Staking rewards based on quintessence tier</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Basic "Earn and Save" loyalty benefits</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Initial marketplace access</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="phase-card mb-8 phase-3">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-40 flex items-start mb-4 md:mb-0">
+                                <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold mr-4 relative z-10">
+                                    3
+                                </div>
+                                <span class="text-lg font-bold text-blue-400 md:hidden">Phase 3</span>
+                            </div>
+                            <div class="flex-1 border border-gray-700 bg-gray-800 bg-opacity-50 rounded-lg p-6 shadow-lg">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-bold mb-1">Penguin Effect: Marketplace Development</h3>
+                                        <p class="text-gray-400 mb-3">Company and project tokenization with enhanced marketplace features</p>
+                                    </div>
+                                    <button class="toggle-btn" data-phase="3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <div class="phase-content phase-3-content hidden mt-6">
+                                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">Key Token Components</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">Company Tokens:</span> 
+                                                        <p class="text-sm text-gray-400">$ANYN-backed tokens representing tokenized equity</p>
+                                                    </div>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">Project Tokens:</span> 
+                                                        <p class="text-sm text-gray-400">Specific initiative tokens for targeted investment</p>
+                                                    </div>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">$wANYN:</span> 
+                                                        <p class="text-sm text-gray-400">Wrapped ANYN for interoperability</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-indigo-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">User Activity Flow</h4>
+                                            <div class="space-y-3">
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Discover investment opportunities in the marketplace</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Purchase company or project tokens backed by $ANYN</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Stake these tokens for APY rewards</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Access real-world discounts and benefits</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-purple-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">Features Unlocked</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Deal marketplace for investments</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Company token staking</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Enhanced "Earn and Save" framework</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Expanded real-world benefits</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 4 -->
+                    <div class="phase-card mb-8 phase-4">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-40 flex items-start mb-4 md:mb-0">
+                                <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-xl font-bold mr-4 relative z-10">
+                                    4
+                                </div>
+                                <span class="text-lg font-bold text-blue-400 md:hidden">Phase 4</span>
+                            </div>
+                            <div class="flex-1 border border-gray-700 bg-gray-800 bg-opacity-50 rounded-lg p-6 shadow-lg">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-bold mb-1">CoEvolution: IoT Integration</h3>
+                                        <p class="text-gray-400 mb-3">IoT sensor data monetization and physical-digital system integration</p>
+                                    </div>
+                                    <button class="toggle-btn" data-phase="4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <div class="phase-content phase-4-content hidden mt-6">
+                                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">Key Token Components</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">IoT Tokens:</span> 
+                                                        <p class="text-sm text-gray-400">Tokenized sensor data and certifications</p>
+                                                    </div>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">Smart Contract Data Layers:</span> 
+                                                        <p class="text-sm text-gray-400">Programmatic automation</p>
+                                                    </div>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <div>
+                                                        <span class="font-semibold">$bANYN:</span> 
+                                                        <p class="text-sm text-gray-400">Bonded tokens for institutional investors</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-indigo-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">User Activity Flow</h4>
+                                            <div class="space-y-3">
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Access IoT sensor data from physical assets</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Interact with automated certification systems</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Participate in advanced manufacturing data monetization</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <p class="text-gray-300">Bond assets as institutional investors</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border-l-4 border-purple-500">
+                                            <h4 class="font-bold text-blue-400 mb-3">Features Unlocked</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">IoT data validation and monetization</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Automated certification systems</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Testing and validation frameworks</p>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-2"></div>
+                                                    <p class="text-gray-300">Digital twin tracking capabilities</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 5 -->
+                    <div class="phase-card mb-8 phase-5">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-40 flex items-start mb-4 md:mb-0">
+                                <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold mr-4 relative z-10">
+                                    5
+                                </div>
+                                <span class="text-lg font-bold text-blue-400 md:hidden">Phase 5</span>
+                            </div>
+                            <div class="flex-1 border border-gray-700 bg-gray-800 bg-opacity-50 rounded-
+                              <div class="flex-1 border border-gray-700 bg-gray-800 bg-opacity-50 rounded-lg p-6 shadow-lg">
                                 <div class="flex justify-between items-center">
                                     <div>
                                         <h3 class="text-xl md:text-2xl font-bold mb-1">Mirroring: Advanced Features</h3>
