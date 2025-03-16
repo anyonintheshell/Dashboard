@@ -1,122 +1,300 @@
-<section id="roadmap" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Development Roadmap & Token System Evolution</h2>
-            
-            <div class="card p-6 mb-12">
-                <h3 class="text-xl font-bold mb-6 text-primary">DeSocX Platform Development Phases</h3>
-                <p class="mb-6">The DeSocX platform follows a structured development roadmap where different token types and features are introduced in sequential phases, each building upon the previous:</p>
-                
-                <div class="space-y-8">
-                    <!-- Phase 1 -->
-                    <div class="phase-card">
-                        <div class="phase-number">1</div>
-                        <h4 class="text-lg font-bold mb-2 mt-2">Pre-Launch: Treasure Hunt & Initial User Acquisition</h4>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div class="space-y-4">
-                                <h5 class="font-medium">Key Token Components:</h5>
-                                <ul class="list-disc pl-6 space-y-2 text-sm">
-                                    <li><span class="font-medium">Feynman Diagram Certificates:</span> Entry NFTs that can be minted and later converted to Particle-Energy</li>
-                                    <li><span class="font-medium">Particle-Energy Tokens:</span> Created from "collapsed" FDC NFTs with unique properties</li>
-                                    <li><span class="font-medium">Anyon-Shell:</span> Biometric identity token created through entanglement</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="space-y-4">
-                                <h5 class="font-medium">User Activity Flow:</h5>
-                                <div class="timeline">
-                                    <div class="timeline-item">User participates in cryptic treasure hunt</div>
-                                    <div class="timeline-item">Receives airdrop with access credentials</div>
-                                    <div class="timeline-item">Mints Feynman Diagram Certificate NFT</div>
-                                    <div class="timeline-item">Creates Anyon-Shell via EyeDKey biometric system</div>
-                                    <div class="timeline-item">Entangles Particle-Energy with Anyon-Shell</div>
-                                </div>
-                            </div>
-                            
-                            <div class="space-y-4">
-                                <h5 class="font-medium">Features Unlocked:</h5>
-                                <ul class="list-disc pl-6 space-y-2 text-sm">
-                                    <li>Initial platform access</li>
-                                    <li>Basic dashboard features</li>
-                                    <li>Countdown to Day of Emergence</li>
-                                    <li>Preparation for $ANYN token launch</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Phase 2 -->
-                    <div class="phase-card">
-                        <div class="phase-number">2</div>
-                        <h4 class="text-lg font-bold mb-2 mt-2">Day of Emergence: Token Launch</h4>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div class="space-y-4">
-                                <h5 class="font-medium">Key Token Components:</h5>
-                                <ul class="list-disc pl-6 space-y-2 text-sm">
-                                    <li><span class="font-medium">$ANYN:</span> The reserve currency token officially launches</li>
-                                    <li><span class="font-medium">$sANYN:</span> Staked ANYN token becomes available</li>
-                                    <li><span class="font-medium">Quintessence Boosts:</span> Pre-launch participants receive enhanced rewards</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="space-y-4">
-                                <h5 class="font-medium">User Activity Flow:</h5>
-                                <div class="timeline">
-                                    <div class="timeline-item">Purchase $ANYN tokens during 7-day auction</div>
-                                    <div class="timeline-item">Stake $ANYN to receive $sANYN</div>
-                                    <div class="timeline-item">Benefit from boosted yields based on pre-launch participation</div>
-                                    <div class="timeline-item">Participate in the Red Queen Race</div>
-                                </div>
-                            </div>
-                            
-                            <div class="space-y-4">
-                                <h5 class="font-medium">Features Unlocked:</h5>
-                                <ul class="list-disc pl-6 space-y-2 text-sm">
-                                    <li>Full platform functionality</li>
-                                    <li>Staking rewards based on quintessence tier</li>
-                                    <li>Basic "Earn and Save" loyalty benefits</li>
-                                    <li>Initial marketplace access</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Additional phases follow the same pattern -->
-                </div>
+import React, { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+
+const RoadmapPhase = ({ phase, title, description, isExpanded, onToggle }) => {
+  return (
+    <div className="mb-8">
+      <div 
+        className="cursor-pointer bg-gray-800 rounded-lg p-6 border border-gray-700"
+        onClick={onToggle}
+      >
+        <div className="flex justify-between items-center">
+          <div>
+            <div className="flex items-center mb-2">
+              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white mr-3">
+                {phase}
+              </div>
+              <h3 className="text-xl font-bold text-white">{title}</h3>
             </div>
-            
-            <div class="card p-6">
-                <h3 class="text-xl font-bold mb-6 text-primary">Token Interactions Across Roadmap Phases</h3>
-                
-                <div class="overflow-x-auto">
-                    <table class="min-w-full bg-white border border-gray-200">
-                        <thead>
-                            <tr>
-                                <th class="py-3 px-4 bg-gray-100 font-bold uppercase text-sm text-left">Token Type</th>
-                                <th class="py-3 px-4 bg-gray-100 font-bold uppercase text-sm text-center">Phase 1<br><span class="text-xs font-normal">Pre-Launch</span></th>
-                                <th class="py-3 px-4 bg-gray-100 font-bold uppercase text-sm text-center">Phase 2<br><span class="text-xs font-normal">DoE</span></th>
-                                <th class="py-3 px-4 bg-gray-100 font-bold uppercase text-sm text-center">Phase 3<br><span class="text-xs font-normal">Penguin</span></th>
-                                <th class="py-3 px-4 bg-gray-100 font-bold uppercase text-sm text-center">Phase 4<br><span class="text-xs font-normal">CoEvolution</span></th>
-                                <th class="py-3 px-4 bg-gray-100 font-bold uppercase text-sm text-center">Phase 5<br><span class="text-xs font-normal">Mirroring</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Table rows for each token type -->
-                            <tr class="border-t border-gray-200">
-                                <td class="py-3 px-4 font-medium">Feynman Diagram Certificate</td>
-                                <td class="py-3 px-4 text-center"><span class="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs">Introduced</span></td>
-                                <td class="py-3 px-4 text-center"><span class="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs">Active</span></td>
-                                <td class="py-3 px-4 text-center"><span class="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs">Active</span></td>
-                                <td class="py-3 px-4 text-center"><span class="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs">Active</span></td>
-                                <td class="py-3 px-4 text-center"><span class="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs">Active</span></td>
-                            </tr>
-                            <!-- More token rows would follow -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <p className="text-gray-400">{description}</p>
+          </div>
+          {isExpanded ? 
+            <ChevronUp className="w-6 h-6 text-blue-400" /> : 
+            <ChevronDown className="w-6 h-6 text-blue-400" />
+          }
         </div>
+        
+        {isExpanded && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 pt-4 border-t border-gray-700">
+            <div className="bg-gray-900 p-4 rounded-lg">
+              <h4 className="font-bold text-blue-400 mb-3">Key Token Components</h4>
+              <ul className="space-y-2">
+                {phase === 1 && (
+                  <>
+                    <li className="text-gray-300">• Feynman Diagram Certificates</li>
+                    <li className="text-gray-300">• Particle-Energy Tokens</li>
+                    <li className="text-gray-300">• Anyon-Shell</li>
+                  </>
+                )}
+                {phase === 2 && (
+                  <>
+                    <li className="text-gray-300">• $ANYN</li>
+                    <li className="text-gray-300">• $sANYN</li>
+                    <li className="text-gray-300">• Quintessence Boosts</li>
+                  </>
+                )}
+                {phase === 3 && (
+                  <>
+                    <li className="text-gray-300">• Company Tokens</li>
+                    <li className="text-gray-300">• Project Tokens</li>
+                    <li className="text-gray-300">• $wANYN</li>
+                  </>
+                )}
+                {phase === 4 && (
+                  <>
+                    <li className="text-gray-300">• IoT Tokens</li>
+                    <li className="text-gray-300">• Smart Contract Data Layers</li>
+                    <li className="text-gray-300">• $bANYN</li>
+                  </>
+                )}
+                {phase === 5 && (
+                  <>
+                    <li className="text-gray-300">• Memory NFTs</li>
+                    <li className="text-gray-300">• Entangled $wANYN</li>
+                    <li className="text-gray-300">• Entangled $bANYN</li>
+                  </>
+                )}
+              </ul>
+            </div>
+            
+            <div className="bg-gray-900 p-4 rounded-lg">
+              <h4 className="font-bold text-blue-400 mb-3">User Activity Flow</h4>
+              <ul className="space-y-2">
+                {phase === 1 && (
+                  <>
+                    <li className="text-gray-300">• User participates in treasure hunt</li>
+                    <li className="text-gray-300">• Receives airdrop credentials</li>
+                    <li className="text-gray-300">• Creates Anyon-Shell identity</li>
+                    <li className="text-gray-300">• Entangles Particle-Energy</li>
+                  </>
+                )}
+                {phase === 2 && (
+                  <>
+                    <li className="text-gray-300">• Purchase $ANYN tokens</li>
+                    <li className="text-gray-300">• Stake $ANYN for $sANYN</li>
+                    <li className="text-gray-300">• Benefit from boosted yields</li>
+                    <li className="text-gray-300">• Join the Red Queen Race</li>
+                  </>
+                )}
+                {phase === 3 && (
+                  <>
+                    <li className="text-gray-300">• Discover investment opportunities</li>
+                    <li className="text-gray-300">• Purchase company tokens</li>
+                    <li className="text-gray-300">• Stake for rewards</li>
+                    <li className="text-gray-300">• Access real-world benefits</li>
+                  </>
+                )}
+                {phase === 4 && (
+                  <>
+                    <li className="text-gray-300">• Access IoT sensor data</li>
+                    <li className="text-gray-300">• Interact with certification systems</li>
+                    <li className="text-gray-300">• Participate in data monetization</li>
+                    <li className="text-gray-300">• Bond assets as institutions</li>
+                  </>
+                )}
+                {phase === 5 && (
+                  <>
+                    <li className="text-gray-300">• Entangle tokens for Looking Glass</li>
+                    <li className="text-gray-300">• Track real-time asset intelligence</li>
+                    <li className="text-gray-300">• Access Ghost-AI system</li>
+                    <li className="text-gray-300">• Create and trade Memory NFTs</li>
+                  </>
+                )}
+              </ul>
+            </div>
+            
+            <div className="bg-gray-900 p-4 rounded-lg">
+              <h4 className="font-bold text-blue-400 mb-3">Features Unlocked</h4>
+              <ul className="space-y-2">
+                {phase === 1 && (
+                  <>
+                    <li className="text-gray-300">• Initial platform access</li>
+                    <li className="text-gray-300">• Basic dashboard features</li>
+                    <li className="text-gray-300">• Day of Emergence countdown</li>
+                  </>
+                )}
+                {phase === 2 && (
+                  <>
+                    <li className="text-gray-300">• Full platform functionality</li>
+                    <li className="text-gray-300">• Staking rewards</li>
+                    <li className="text-gray-300">• Basic loyalty benefits</li>
+                  </>
+                )}
+                {phase === 3 && (
+                  <>
+                    <li className="text-gray-300">• Investment marketplace</li>
+                    <li className="text-gray-300">• Company token staking</li>
+                    <li className="text-gray-300">• Enhanced loyalty framework</li>
+                  </>
+                )}
+                {phase === 4 && (
+                  <>
+                    <li className="text-gray-300">• IoT data monetization</li>
+                    <li className="text-gray-300">• Automated certification</li>
+                    <li className="text-gray-300">• Digital twin tracking</li>
+                  </>
+                )}
+                {phase === 5 && (
+                  <>
+                    <li className="text-gray-300">• Looking Glass intelligence</li>
+                    <li className="text-gray-300">• Ghost-AI analysis system</li>
+                    <li className="text-gray-300">• Memory NFT marketplace</li>
+                  </>
+                )}
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
-</section>
+  );
+};
+
+export default function DeSocXRoadmap() {
+  const [expandedPhase, setExpandedPhase] = useState(null);
+
+  const togglePhase = (phase) => {
+    setExpandedPhase(expandedPhase === phase ? null : phase);
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white">
+      <header className="pt-16 pb-12 px-4 text-center">
+        <h1 className="text-4xl font-bold mb-4">
+          <span className="text-blue-400">DeSocX</span> Ecosystem Development
+        </h1>
+        <p className="max-w-3xl mx-auto text-gray-300">
+          A revolutionary decentralized platform leveraging quantum-resistant technology, 
+          tokenized assets, and autonomous systems for global financial infrastructure
+        </p>
+      </header>
+
+      <main className="max-w-5xl mx-auto px-4 pb-20">
+        <h2 className="text-2xl font-bold mb-8 text-center">Development Roadmap</h2>
+        
+        <RoadmapPhase 
+          phase={1} 
+          title="Pre-Launch: Treasure Hunt" 
+          description="Initial user acquisition and ecosystem onboarding"
+          isExpanded={expandedPhase === 1}
+          onToggle={() => togglePhase(1)}
+        />
+        
+        <RoadmapPhase 
+          phase={2} 
+          title="Day of Emergence: Token Launch" 
+          description="Main platform token launch and initial liquidity bootstrapping"
+          isExpanded={expandedPhase === 2}
+          onToggle={() => togglePhase(2)}
+        />
+        
+        <RoadmapPhase 
+          phase={3} 
+          title="Penguin Effect: Marketplace Development" 
+          description="Company and project tokenization with enhanced marketplace features"
+          isExpanded={expandedPhase === 3}
+          onToggle={() => togglePhase(3)}
+        />
+        
+        <RoadmapPhase 
+          phase={4} 
+          title="CoEvolution: IoT Integration" 
+          description="IoT sensor data monetization and physical-digital system integration"
+          isExpanded={expandedPhase === 4}
+          onToggle={() => togglePhase(4)}
+        />
+        
+        <RoadmapPhase 
+          phase={5} 
+          title="Mirroring: Advanced Features" 
+          description="AI and quantum computing integration for real-time asset intelligence"
+          isExpanded={expandedPhase === 5}
+          onToggle={() => togglePhase(5)}
+        />
+        
+        <h2 className="text-2xl font-bold mt-16 mb-8 text-center">Token Evolution</h2>
+        
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-gray-800 border border-gray-700 rounded-lg">
+            <thead>
+              <tr>
+                <th className="py-3 px-4 text-left border-b border-gray-700">Token Type</th>
+                <th className="py-3 px-4 text-center border-b border-gray-700">Phase 1</th>
+                <th className="py-3 px-4 text-center border-b border-gray-700">Phase 2</th>
+                <th className="py-3 px-4 text-center border-b border-gray-700">Phase 3</th>
+                <th className="py-3 px-4 text-center border-b border-gray-700">Phase 4</th>
+                <th className="py-3 px-4 text-center border-b border-gray-700">Phase 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="py-3 px-4 border-b border-gray-700">Feynman Diagram Certificate</td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-green-900 text-green-400 rounded text-xs">Introduced</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-blue-900 text-blue-400 rounded text-xs">Active</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-blue-900 text-blue-400 rounded text-xs">Active</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-blue-900 text-blue-400 rounded text-xs">Active</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-blue-900 text-blue-400 rounded text-xs">Active</span>
+                </td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 border-b border-gray-700">$ANYN</td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-gray-700 text-gray-400 rounded text-xs">Unavailable</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-green-900 text-green-400 rounded text-xs">Introduced</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-blue-900 text-blue-400 rounded text-xs">Active</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-blue-900 text-blue-400 rounded text-xs">Active</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-blue-900 text-blue-400 rounded text-xs">Active</span>
+                </td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 border-b border-gray-700">Memory NFT</td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-gray-700 text-gray-400 rounded text-xs">Unavailable</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-gray-700 text-gray-400 rounded text-xs">Unavailable</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-gray-700 text-gray-400 rounded text-xs">Unavailable</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-gray-700 text-gray-400 rounded text-xs">Unavailable</span>
+                </td>
+                <td className="py-3 px-4 text-center border-b border-gray-700">
+                  <span className="px-2 py-1 bg-green-900 text-green-400 rounded text-xs">Introduced</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  );
+}
