@@ -3,180 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeSocX Quantum Financial System</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>DeSocX - Token System Interoperability</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary: #00ffff; /* Cyan */
+            --secondary: #ff00ff; /* Magenta */
+            --tertiary: #00ff00; /* Green */
+            --accent: #ff4500; /* Orange-Red */
+            --dark: #0a0a0a; /* Almost black */
+            --light: #e0e0e0; /* Light gray */
         }
 
-        /* Body styling */
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #e0e0e0;
-            line-height: 1.6;
+            font-family: 'Orbitron', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
         }
 
-        /* Header */
-        header {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: rgba(0, 0, 0, 0.7);
-            border-bottom: 2px solid #00ffcc;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Intro section */
-        .intro {
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-
-        .intro h2 {
-            font-size: 2rem;
-            color: #ff007a;
-            margin-bottom: 1rem;
-        }
-
-        /* Features section */
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        section {
+            background: linear-gradient(135deg, rgba(0,255,255,0.1), rgba(255,0,255,0.1));
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 10px var(--primary);
             padding: 2rem;
-            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #00ffcc;
-            border-radius: 10px;
-            padding: 1.5rem;
-            width: 100%;
-            max-width: 300px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--secondary);
+            box-shadow: 0 0 15px var(--secondary);
+            transition: all 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px #00ffcc;
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px var(--accent);
         }
 
-        .feature-card i {
-            color: #ff007a;
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        h2, h3, h4 {
+            text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);
         }
 
-        .feature-card h3 {
-            color: #ff007a;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card button {
-            background: #00ffcc;
-            color: #1a1a2e;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .feature-card button:hover {
-            background: #ff007a;
-            color: #e0e0e0;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.7);
-            border-top: 2px solid #00ffcc;
-            position: relative;
-            bottom: 0;
+        table {
+            border-collapse: collapse;
             width: 100%;
         }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
+        th, td {
+            border: 1px solid var(--primary);
+            padding: 8px;
+            text-align: center;
+        }
 
-            .intro h2 {
-                font-size: 1.5rem;
-            }
+        th {
+            background: rgba(0,255,255,0.1);
+        }
 
-            .feature-card {
-                max-width: 100%;
-            }
+        tr:nth-child(even) {
+            background: rgba(255,0,255,0.05);
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>DeSocX QFS</h1>
-        <p>A Quantum-Powered Decentralized Financial Ecosystem</p>
-    </header>
-
-    <section class="intro">
-        <h2>Welcome to DeSocX</h2>
-        <p>Experience the future of finance with quantum-secure identity, elastic tokenomics, and real-time asset intelligence.</p>
+    <section id="perks" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold mb-10 text-center">Access & Perks System</h2>
+                <div class="card p-6 mb-12">
+                    <h3 class="text-xl font-bold mb-6 text-primary">"Earn and Save" Loyalty Framework</h3>
+                    <p class="mb-6">The DeSocX platform implements a comprehensive loyalty framework that rewards users for participation and token staking with both platform benefits and real-world perks:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Digital Rewards -->
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">Digital Rewards</h4>
+                            <div class="space-y-4">
+                                <!-- Staking Rewards -->
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white font-bold mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium">Staking Rewards</h5>
+                                            <p class="text-sm text-gray-600">Tiered APY based on staking duration and quintessence</p>
+                                        </div>
+                                    </div>
+                                    <div class="pl-12 text-sm">
+                                        <ul class="list-disc pl-4 space-y-1">
+                                            <li>30-day stake: 0.7% daily return</li>
+                                            <li>60-day stake: 1.0% daily return</li>
+                                            <li>90-day stake: 1.3% daily return</li>
+                                            <li>120-day stake: 2.0% daily return</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Governance Rights -->
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white font-bold mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium">Governance Rights</h5>
+                                            <p class="text-sm text-gray-600">Voting power based on stake size and duration</p>
+                                        </div>
+                                    </div>
+                                    <div class="pl-12 text-sm">
+                                        <ul class="list-disc pl-4 space-y-1">
+                                            <li>Treasury allocation decisions</li>
+                                            <li>Protocol parameter adjustments</li>
+                                            <li>Feature prioritization</li>
+                                            <li>Strategic partnerships</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Real-World Perks (Assumed Content) -->
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">Real-World Perks</h4>
+                            <div class="space-y-4">
+                                <!-- Exclusive Access -->
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="w-10 h-10 rounded-full bg-tertiary flex items-center justify-center text-white font-bold mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium">Exclusive Access</h5>
+                                            <p class="text-sm text-gray-600">Unlock real-world benefits with token holdings</p>
+                                        </div>
+                                    </div>
+                                    <div class="pl-12 text-sm">
+                                        <ul class="list-disc pl-4 space-y-1">
+                                            <li>Event invitations</li>
+                                            <li>Partner discounts</li>
+                                            <li>VIP memberships</li>
+                                            <li>Limited edition merchandise</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <section class="features">
-        <div class="feature-card">
-            <i class="fas fa-coins"></i>
-            <h3>$ANYN Token Ecosystem</h3>
-            <p>Stake, bond, or wrap $ANYN tokens to unlock rewards, governance, and interoperability.</p>
-            <button>Explore Tokens</button>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-lock"></i>
-            <h3>Staking Rewards</h3>
-            <p>Lock $ANYN to earn $sANYN with rebasing rewards up to 2% daily APY.</p>
-            <button>Start Staking</button>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-eye"></i>
-            <h3>Looking Glass</h3>
-            <p>Real-time tracking of assets and investments with $wANYN entanglement.</p>
-            <button>View Assets</button>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-user-secret"></i>
-            <h3>Anyon-Shell Identity</h3>
-            <p>Quantum-resistant, biometric-secured ID for authenticated anonymity.</p>
-            <button>Secure ID</button>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 DeSocX LLC Blockchain.</p>
-    </footer>
 </body>
 </html>
