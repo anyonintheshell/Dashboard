@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeSocX Quantum Financial System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 2px solid #00ffcc;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Intro section */
+        .intro {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .intro h2 {
+            font-size: 2rem;
+            color: #ff007a;
+            margin-bottom: 1rem;
+        }
+
+        /* Features section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #00ffcc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px #00ffcc;
+        }
+
+        .feature-card i {
+            color: #ff007a;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #ff007a;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card button {
+            background: #00ffcc;
+            color: #1a1a2e;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .feature-card button:hover {
+            background: #ff007a;
+            color: #e0e0e0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-top: 2px solid #00ffcc;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .intro h2 {
+                font-size: 1.5rem;
+            }
+
+            .feature-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DeSocX QFS</h1>
+        <p>A Quantum-Powered Decentralized Financial Ecosystem</p>
+    </header>
+
+    <section class="intro">
+        <h2>Welcome to DeSocX</h2>
+        <p>Experience the future of finance with quantum-secure identity, elastic tokenomics, and real-time asset intelligence.</p>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-coins"></i>
+            <h3>$ANYN Token Ecosystem</h3>
+            <p>Stake, bond, or wrap $ANYN tokens to unlock rewards, governance, and interoperability.</p>
+            <button>Explore Tokens</button>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-lock"></i>
+            <h3>Staking Rewards</h3>
+            <p>Lock $ANYN to earn $sANYN with rebasing rewards up to 2% daily APY.</p>
+            <button>Start Staking</button>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-eye"></i>
+            <h3>Looking Glass</h3>
+            <p>Real-time tracking of assets and investments with $wANYN entanglement.</p>
+            <button>View Assets</button>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-user-secret"></i>
+            <h3>Anyon-Shell Identity</h3>
+            <p>Quantum-resistant, biometric-secured ID for authenticated anonymity.</p>
+            <button>Secure ID</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 DeSocX. Powered by Cruxeon LLC Blockchain.</p>
+    </footer>
+</body>
+</html>
